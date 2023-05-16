@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MessageBubbleChat extends StatelessWidget {
-  const MessageBubbleChat({super.key});
+import '../../../domain/entities/message.dart';
+class MyMessageBubbleChat extends StatelessWidget {
+  final Message chatPro;
+  const MyMessageBubbleChat({super.key, required this.chatPro});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +17,12 @@ class MessageBubbleChat extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
 
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text("lasdasdklj lkasdjl", style: TextStyle(color: Colors.white)),
+          child:  Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text(chatPro.text, style: const TextStyle(color: Colors.white)),
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
       ],
     );
   }
