@@ -49,7 +49,7 @@ class _ChatView extends StatelessWidget {
 
               return(message.fromWho == FromWho.mine)
                ?  MyMessageBubbleChat(chatPro: message,) :
-                 const AceMessageBubble();
+                  AceMessageBubble(message: message,);
              },
            
             )
